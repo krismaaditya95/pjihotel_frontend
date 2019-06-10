@@ -1,0 +1,55 @@
+<h3 mat-dialog-title>Edit data customer : {{ data.id_customer}}</h3>
+
+<form (ngSubmit)="onEditSubmit(data.id_customer)" #editCustomerForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+<div mat-dialog-content *ngIf="customer">
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Nomor Identitas (KTP/SIM)</label>
+            <input name="noIdentitas" type="number" class="form-control" [(ngModel)]="customer.noIdentitas" #noIdentitas="ngModel" required>
+          </div>
+        </div>
+            
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Nama Depan</label>
+            <input name="namaDepan" type="text" class="form-control" [(ngModel)]="customer.namaDepan" #namaDepan="ngModel" required>
+          </div>
+        </div>
+  
+        <div class="col-sm-7">
+            <div class="form-group form-float">
+              <label class="form-label">Nama Belakang</label>
+              <input name="namaBelakang" type="text" class="form-control" [(ngModel)]="customer.namaBelakang" #namaBelakang="ngModel" required>
+            </div>
+          </div>
+            
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Nomor telepon</label>
+            <input name="noTelp" type="number" class="form-control" [(ngModel)]="customer.noTelp" #noTelp="ngModel" required>
+          </div>
+        </div>
+            
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" [(ngModel)]="customer.email" #email="ngModel" required>
+          </div>
+        </div>
+            
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Alamat</label>
+            <input name="alamat" type="text" class="form-control" [(ngModel)]="customer.alamat" #alamat="ngModel" required>
+          </div>
+        </div>
+
+      
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="batal()">Batal</button>
+    <button type="submit" [disabled]="!editCustomerForm.form.valid" class="btn btn-info">Simpan</button>
+    <!-- <button mat-button>Simpan</button> -->
+</div>
+</form>

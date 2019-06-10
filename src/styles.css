@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body{
+    /* font-size: 0.9em; */
+    /* background-color: #EFE2BA; */
+    /* background-color: #F13C20; */
+    /* background-color: #405A61; */
+    /* background-color: #EFE2BA; */
+}
+.navbar{
+    color: white;
+    /* background-color: #252525; */
+    background-color: #F13C20;
+    height: 50px;
+}
+
+.flex-column{
+    color: white;
+    background-color: #405A61;
+    float: left;
+    width: 200px;
+}
+
+.nav-link{
+    color: white;
+}
+
+.main-menu-wrapper{
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}

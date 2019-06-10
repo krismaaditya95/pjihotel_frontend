@@ -1,0 +1,10 @@
+<h3 mat-dialog-title>Hapus data customer : {{ data.id_customer}}</h3>
+
+<div mat-dialog-content>
+    <h6>Apakah anda yakin ingin menghapus Customer ini?</h6>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="deleteCustomer(data.id_customer)">Ya, Hapus</button>
+    <button mat-button (click)="batal()">Batal</button>
+</div>

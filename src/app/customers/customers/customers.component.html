@@ -1,0 +1,39 @@
+<div class="main-menu-wrapper">
+    <div class="div-title">
+        <h5>Data Tamu Hotel</h5>
+    </div>
+    <hr>
+
+    <a routerLink="/buku-tamu/tambah" class="btn btn-primary">Tambah data Tamu</a>
+
+    <table class="table customer-table table-striped table-bordered text-left">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">No Identitas</th>
+            <th scope="col">Nama Depan</th>
+            <th scope="col">Nama Belakang</th>
+            <th scope="col">No. Telp</th>
+            <th scope="col">Email</th>
+            <th scope="col">Alamat</th>
+            <th colspan="2" scope="col">Pilihan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers | async">
+            <td>{{ customer.idCustomer }}</td>
+            <td>{{ customer.noIdentitas }}</td>
+            <td>{{ customer.namaDepan }}</td>
+            <td>{{ customer.namaBelakang }}</td>
+            <td>{{ customer.noTelp }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.alamat }}</td>
+            
+            <td><button (click)="openEditCustomerDialog(customer.idCustomer)" class="btn btn-primary">Edit</button></td>
+            <!-- <td><button (click)="deleteCustomer(customer.idCustomer)" class="btn btn-danger" title="Hapus tamu bernama {{ customer.namaDepan }}">Hapus</button></td> -->
+            <td><button (click)="openDeleteCustomerDialog(customer.idCustomer)" class="btn btn-danger" title="Hapus tamu bernama {{ customer.namaDepan }}">Hapus</button></td>
+            
+          </tr>
+        </tbody>
+      </table>
+</div>
