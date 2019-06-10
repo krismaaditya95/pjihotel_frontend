@@ -2,6 +2,9 @@
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+/* *{
+    font-size: 0.9em;
+} */
 body{
     /* font-size: 0.9em; */
     /* background-color: #EFE2BA; */
@@ -13,7 +16,9 @@ body{
     color: white;
     /* background-color: #252525; */
     background-color: #F13C20;
+    background-color: #252525;
     height: 50px;
+    /* font-size: 0.8em; */
 }
 
 .flex-column{
@@ -21,6 +26,8 @@ body{
     background-color: #405A61;
     float: left;
     width: 200px;
+    bottom: 0px;
+    font-size: 0.8em;
 }
 
 .nav-link{
@@ -29,6 +36,8 @@ body{
 
 .main-menu-wrapper{
     margin: 20px;
+    margin-left: 140px;
     border: 1px solid #ccc;
     padding: 20px;
+    font-size: 0.8em;
 }

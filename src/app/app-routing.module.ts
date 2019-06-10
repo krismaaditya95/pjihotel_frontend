@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransaksiComponent } from './transaksi/transaksi.component';
 import { CustomersComponent } from './customers/customers/customers.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'buku-tamu/tambah',
     component: AddCustomerComponent
+  },
+  {
+    path: 'tipe-kamar',
+    component: TipeKamarComponent
   }
 ];
 

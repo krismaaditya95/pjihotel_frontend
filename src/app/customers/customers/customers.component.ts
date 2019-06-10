@@ -58,6 +58,7 @@ export class CustomersComponent implements OnInit {
   openDeleteCustomerDialog(idCustomer : number){
     this.DeleteDialogRef = this.dialog.open(DeleteCustomerAlert,{
       width: '400px',
+      height: '150px', 
       data: { id_customer : idCustomer}
     });
 

@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomersComponent, EditCustomerDialog, DeleteCustomerAlert } from './customers/customers/customers.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { from } from 'rxjs';
+import { KamarComponent } from './kamar/kamar/kamar.component';
+import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { from } from 'rxjs';
     CustomersComponent,
     AddCustomerComponent,
     EditCustomerDialog,
-    DeleteCustomerAlert
+    DeleteCustomerAlert,
+    KamarComponent,
+    TipeKamarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+<div class="main-menu-wrapper">
+  <div class="div-title">
+      <h5>Data Tipe-Kamar Hotel</h5>
+  </div>
+
+  <a routerLink="/tipe-kamar/tambah" class="btn btn-primary">Tambah data Tipe-Kamar</a>
+
+  <table class="table tipe-kamar-table table-striped table-bordered text-left">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Nama Tipe</th>
+        <th scope="col">Harga</th>
+        <th colspan="2" scope="col">Pilihan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tipekamar of tipekamars | async">
+        <td>{{ tipekamar.idTipeKamar }}</td>
+        <td>{{ tipekamar.namaTipe }}</td>
+        <td>{{ tipekamar.harga }}</td>
+        <!-- <td><button (click)="openEditCustomerDialog()" class="btn btn-primary">Edit</button></td> -->
+        <!-- <td><button (click)="openDeleteCustomerDialog()" class="btn btn-danger" title="Hapus tamu bernama {{ customer.namaDepan }}">Hapus</button></td> -->
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
