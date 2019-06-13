@@ -10,7 +10,7 @@ import { MatDialogModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransaksiComponent } from './transaksi/transaksi.component';
+import { TransaksiComponent, EditTransaksiDialog, DeleteTransaksiDialog } from './transaksi/transaksi.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,8 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomersComponent, EditCustomerDialog, DeleteCustomerAlert } from './customers/customers/customers.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { from } from 'rxjs';
-import { KamarComponent } from './kamar/kamar/kamar.component';
-import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
+import { KamarComponent, EditKamarDialog, DeleteKamarDialog } from './kamar/kamar/kamar.component';
+import { TipeKamarComponent, EditTipeKamarDialog, DeleteTipeKamarDialog } from './kamar/tipe-kamar/tipe-kamar.component';
+import { AddTransaksiComponent, AddTransaksiLanjutDialog } from './add-transaksi/add-transaksi.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,16 @@ import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
     EditCustomerDialog,
     DeleteCustomerAlert,
     KamarComponent,
-    TipeKamarComponent
+    TipeKamarComponent,
+    EditTipeKamarDialog,
+    DeleteTipeKamarDialog,
+    EditKamarDialog,
+    DeleteKamarDialog,
+    AddTransaksiComponent,
+    AddTransaksiLanjutDialog,
+    EditTransaksiDialog,
+    DeleteTransaksiDialog,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,14 @@ import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
   ],
   entryComponents:[
     EditCustomerDialog,
-    DeleteCustomerAlert
+    DeleteCustomerAlert,
+    EditTipeKamarDialog,
+    DeleteTipeKamarDialog,
+    EditKamarDialog,
+    DeleteKamarDialog,
+    AddTransaksiLanjutDialog,
+    EditTransaksiDialog,
+    DeleteTransaksiDialog
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,61 @@
+<div class="main-menu-wrapper">
+    <div class="div-title">
+      <h5>Catat Check-In / Booking | Step 2</h5>
+    </div>
+  
+    <h5>Kamar yang anda pilih : ID {{data.idKamar}} , {{data.noKamar}}, {{data.namaTipe}} ({{data.harga | currency : 0 : "Rp. "}})</h5>
+
+    <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+        <div class="col-sm-7">
+        <div class="form-group form-float">
+            <label class="form-label">Pilih Tamu</label>
+            <select name="selectcustomer" [(ngModel)]="transaksi.idCustomer" #idCustomer="ngModel">
+            <option *ngFor="let customer of customers | async" value="{{customer.idCustomer}}">{{customer.namaDepan}} {{customer.namaBelakang}}</option>
+            </select>
+        </div>
+        </div>
+
+        <input name="idKamar" type="number" [(ngModel)]="transaksi.idKamar" #idKamar="ngModel">
+
+      <div class="col-sm-7">
+        <div class="form-group form-float">
+          <label class="form-label">Tanggal Check In {{data.todayDate}}</label>
+          <input name="checkInDate" type="date" min="{{ data.todayDate | date:'yyyy-MM-dd' }}" class="form-control" [(ngModel)]="transaksi.checkInDate" #checkInDate="ngModel" required>
+        </div>
+      </div>
+
+      <div class="col-sm-7">
+            <div class="form-group form-float">
+                <label class="form-label">Jam Check In</label>
+                <input name="checkInTime" type="time" class="form-control" [(ngModel)]="transaksi.checkInTime" #checkInTime="ngModel" required>
+            </div>
+        </div>
+
+      <div class="col-sm-7">
+        <div class="form-group form-float">
+            <label class="form-label">Tanggal Check Out</label>
+            <input name="checkOutDate" type="date" min="{{ data.todayDate | date:'yyyy-MM-dd' }}" class="form-control" [(ngModel)]="transaksi.checkOutDate" #checkOutDate="ngModel" required>
+        </div>
+    </div>
+
+    <div class="col-sm-7">
+        <div class="form-group form-float">
+            <label class="form-label">Jam Check Out</label>
+                <input name="checkOutTime" type="time" class="form-control" [(ngModel)]="transaksi.checkOutTime" #checkOutTime="ngModel" required>
+        </div>
+    </div>
+
+    <div class="col-sm-7">
+        <div class="form-group form-float">
+            <label class="form-label">Pilih Status Check-In</label>
+                <select name="selectstatuscheckin" [(ngModel)]="transaksi.idStatusCheck" #idStatusCheck="ngModel" required>
+                <option *ngFor="let statuscheck of statuschecks | async" value="{{statuscheck.idStatusCheck}}">{{statuscheck.namaStatus}}</option>
+                </select>
+        </div>
+    </div>
+    
+    <button type="submit" [disabled]="!addTransaksiForm.form.valid" class="btn btn-info">Simpan</button>
+  
+    </form>
+  </div>
+  

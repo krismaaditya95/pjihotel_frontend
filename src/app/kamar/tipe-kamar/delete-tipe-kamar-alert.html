@@ -1,0 +1,10 @@
+<h3 mat-dialog-title>Hapus data tipe kamar : {{ data.namaTipe}}</h3>
+
+<div mat-dialog-content>
+    <h6>Apakah anda yakin ingin menghapus data tipe kamar ini?</h6>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="deleteTipeKamar(data.idTipeKamar)">Ya, Hapus</button>
+    <button mat-button (click)="batal()">Batal</button>
+</div>

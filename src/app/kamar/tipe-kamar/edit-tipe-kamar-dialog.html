@@ -1,0 +1,24 @@
+<h4 mat-dialog-title>{{data.action}} data tipe kamar {{ data.namaTipe}}</h4>
+
+<form (ngSubmit)="onEditSubmit(data.idTipeKamar)" #editTipeKamarForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+<div mat-dialog-content *ngIf="tipekamar">            
+        <div class="col-sm-7">
+          <div class="form-group form-float">
+            <label class="form-label">Nama Tipe Kamar</label>
+            <input name="namatipekamar" type="text" class="form-control" [(ngModel)]="tipekamar.namaTipe" #namaTipe="ngModel" required>
+          </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="form-group form-float">
+              <label class="form-label">Harga Kamar</label>
+              <input name="hargakamar" type="number" class="form-control" [(ngModel)]="tipekamar.harga" #harga="ngModel" required>
+            </div>
+          </div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="batal()">Batal</button>
+    <button type="submit" [disabled]="!editTipeKamarForm.form.valid" class="btn btn-info">Simpan</button>
+    <!-- <button mat-button>Simpan</button> -->
+</div>
+</form>

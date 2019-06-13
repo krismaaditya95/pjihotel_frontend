@@ -3,7 +3,9 @@
       <h5>Data Tipe-Kamar Hotel</h5>
   </div>
 
-  <a routerLink="/tipe-kamar/tambah" class="btn btn-primary">Tambah data Tipe-Kamar</a>
+  <!-- <a routerLink="/tipe-kamar/tambah" class="btn btn-primary">Tambah data Tipe-Kamar</a> -->
+
+  <button (click)="openEditTipeKamarDialog('add')" class="btn btn-primary">Tambah data tipe kamar</button>
 
   <table class="table tipe-kamar-table table-striped table-bordered text-left">
     <thead>
@@ -19,8 +21,8 @@
         <td>{{ tipekamar.idTipeKamar }}</td>
         <td>{{ tipekamar.namaTipe }}</td>
         <td>{{ tipekamar.harga }}</td>
-        <!-- <td><button (click)="openEditCustomerDialog()" class="btn btn-primary">Edit</button></td> -->
-        <!-- <td><button (click)="openDeleteCustomerDialog()" class="btn btn-danger" title="Hapus tamu bernama {{ customer.namaDepan }}">Hapus</button></td> -->
+        <td><button (click)="openEditTipeKamarDialog('edit', tipekamar.idTipeKamar, tipekamar.namaTipe)" class="btn btn-primary">Edit</button></td>
+        <td><button (click)="openDeleteTipeKamarDialog(tipekamar.idTipeKamar, tipekamar.namaTipe)" class="btn btn-danger" title="Hapus kamar">Hapus</button></td>
         
       </tr>
     </tbody>

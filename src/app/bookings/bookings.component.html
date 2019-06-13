@@ -1,0 +1,43 @@
+<div class="main-menu-wrapper">
+  <div class="div-title">
+      <h5>Data Booking Hotel</h5>
+  </div>
+
+  <!-- <button (click)="openEditTransaksiDialog('add')" class="btn btn-primary">Catat Check-In (modal)</button> -->
+  <a routerLink="/check-in/catat" class="btn btn-primary">Catat Check-In (other page)</a>
+
+  <table class="table tipe-kamar-table table-striped table-bordered text-left">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Kode Check-In/Booking</th>
+        <th scope="col">Nama Tamu</th>
+        <th scope="col">Kamar</th>
+        <th scope="col">Tanggal Check-In</th>
+        <th scope="col">Jam Check-In</th>
+        <th scope="col">Tanggal Check-Out</th>
+        <th scope="col">Jam Check-Out</th>
+        <th scope="col">Total Harga</th>
+        <th scope="col">Status Check In</th>
+        <th colspan="2" scope="col">Pilihan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings | async">
+        <td>{{ booking.idTransaksi }}</td>
+        <td>#{{ booking.kodeTransaksi }}</td>
+        <td>{{ booking.customer.namaDepan }} {{ booking.customer.namaBelakang }}</td>
+        <td>{{ booking.kamar.noKamar }}</td>
+        <td>{{ booking.checkInDate | date : "dd-MMM-yyyy" }}</td>
+        <td>{{ booking.checkInTime }}</td>
+        <td>{{ booking.checkOutDate | date: "dd-MMM-yyyy" }}</td>
+        <td>{{ booking.checkOutTime }}</td>
+        <td>{{ booking.totalHarga | currency: 0 : "Rp. " }}</td>
+        <td>{{ booking.statusCheck.namaStatus }}</td>
+        <td><button (click)="openApproveBookingDialog('approve', booking.idTransaksi, bookings.kodeTransaksi)" class="btn btn-primary">Approve</button></td>
+        <td><button (click)="openCancelBookingDialog(bookings.idTransaksi, booking.kodeTransaksi)" class="btn btn-danger" title="Cancel booking">Cancel booking</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

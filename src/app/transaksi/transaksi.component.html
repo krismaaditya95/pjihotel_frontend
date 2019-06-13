@@ -1,53 +1,43 @@
 <div class="main-menu-wrapper">
-    <div class="div-title">
-        <h5>Check-In / Booking data</h5>
-    </div>
+  <div class="div-title">
+      <h5>Data Transaksi Check-In / Booking Hotel</h5>
+  </div>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-        <li class="page-item disabled"><a class="page-link" href="" tabindex="-1">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#"></a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
+  <button (click)="openEditTransaksiDialog('add')" class="btn btn-primary">Catat Check-In (modal)</button>
+  <a routerLink="/check-in/catat" class="btn btn-primary">Catat Check-In (other page)</a>
 
-    <div class="transaksi-div-wrapper container text-center" id="tasksDiv">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered text-left">
-            <thead>
-              <tr>
-                <th>No.</th>
-                <th>Nama Tamu</th>
-                <th>Kamar</th>
-                <th>Tanggal Check In</th>
-                <th>Waktu Check In</th>
-                <th>Tanggal Check Out</th>
-                <th>Waktu Check Out</th>
-                <th>Status CheckIn/Out</th>
-                <th>Total Harga</th>
-                <th colspan = "2">Pilihan</th>
-    
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr ng-repeat="transaksi in transaksis">
-                <td>{{transaksi.idTransaksi}}</td>
-                <td>{{transaksi.customer.namaCustomer}}</td>
-                <td>{{transaksi.kamar.noKamar}}</td>
-                <td>{{transaksi.checkInDate | date : "mediumDate" }}</td>
-                <td>{{transaksi.checkInTime | date : "HH:mm" }}</td>
-                <td>{{transaksi.checkOutDate | date : "mediumDate" }}</td>
-                <td>{{transaksi.checkOutTime | date : "HH:mm" }}</td>
-                <td>{{transaksi.statusCheck.namaStatus}}</td>
-                <td>{{transaksi.totalHarga | currency : "Rp." : 0}}</td>
-                <td><a href="edit-transaksi/{{transaksi.idTransaksi}}" id="showEditTrxModal" class="btn btn-primary">Edit</a></td>
-						    <td><a href="delete-transaksi/{{transaksi.idTransaksi}}" class="btn btn-danger">Delete</a></td>
-              </tr>
-            </tbody>
-    
-    
-          </table>
-        </div>
-      </div>
+  <table class="table tipe-kamar-table table-striped table-bordered text-left">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Kode Check-In/Booking</th>
+        <th scope="col">Nama Tamu</th>
+        <th scope="col">Kamar</th>
+        <th scope="col">Tanggal Check-In</th>
+        <th scope="col">Jam Check-In</th>
+        <th scope="col">Tanggal Check-Out</th>
+        <th scope="col">Jam Check-Out</th>
+        <th scope="col">Total Harga</th>
+        <th scope="col">Status Check In</th>
+        <th colspan="2" scope="col">Pilihan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaksi of transaksis | async">
+        <td>{{ transaksi.idTransaksi }}</td>
+        <td>#{{ transaksi.kodeTransaksi }}</td>
+        <td>{{ transaksi.customer.namaDepan }} {{ transaksi.customer.namaBelakang }}</td>
+        <td>{{ transaksi.kamar.noKamar }}</td>
+        <td>{{ transaksi.checkInDate | date : "dd-MMM-yyyy" }}</td>
+        <td>{{ transaksi.checkInTime }}</td>
+        <td>{{ transaksi.checkOutDate | date: "dd-MMM-yyyy" }}</td>
+        <td>{{ transaksi.checkOutTime }}</td>
+        <td>{{ transaksi.totalHarga | currency: 0 : "Rp. " }}</td>
+        <td>{{ transaksi.statusCheck.namaStatus }}</td>
+        <td><button (click)="openCheckOutDialog('co', transaksi.idTransaksi, transaksi.kodeTransaksi)" class="btn btn-primary">Check Out</button></td>
+        <td><button (click)="openDeleteTransaksiDialog(transaksi.idTransaksi, transaksi.kodeTransaksi)" class="btn btn-danger" title="Hapus/Batalkan transaksi">Hapus Catatan</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
 </div>

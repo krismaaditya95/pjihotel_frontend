@@ -16,13 +16,13 @@ export interface DialogData{
 export class CustomersComponent implements OnInit {
 
   // customers: Customers[];
-  idCustomer: number;
-  noIdentitas: number;
-    namaDepan: string;
-    namaBelakang: string;
-    noTelp: number;
-    email: string;
-    alamat: string;
+  // idCustomer: number;
+  // noIdentitas: number;
+  // namaDepan: string;
+  // namaBelakang: string;
+  // noTelp: number;
+  // email: string;
+  // alamat: string;
 
   customers: Observable<Customers[]>;
 
@@ -88,7 +88,6 @@ export class CustomersComponent implements OnInit {
 
 @Component({
   selector: 'edit-customer-dialog',
-  // template: '<h4>asu</h4>'
   templateUrl: './edit-customer-dialog.html'
 })
 export class EditCustomerDialog{

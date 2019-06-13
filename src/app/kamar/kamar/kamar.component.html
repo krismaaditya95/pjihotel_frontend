@@ -1,3 +1,32 @@
-<p>
-  kamar works!
-</p>
+<div class="main-menu-wrapper">
+  <div class="div-title">
+      <h5>Data Kamar Hotel</h5>
+  </div>
+
+  <button (click)="openEditKamarDialog('add')" class="btn btn-primary">Tambah kamar</button>
+
+  <table class="table tipe-kamar-table table-striped table-bordered text-left">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Nomor Kamar</th>
+        <th scope="col">Tipe Kamar</th>
+        <th scope="col">Harga Kamar</th>
+        <th scope="col">Status Kamar</th>
+        <th colspan="2" scope="col">Pilihan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let kamar of kamars | async">
+        <td>{{ kamar.idKamar }}</td>
+        <td>{{ kamar.noKamar }}</td>
+        <td>{{ kamar.tipeKamar.namaTipe }}</td>
+        <td>{{ kamar.tipeKamar.harga }}</td>
+        <td>{{ kamar.statusKamar.namaStatusKamar }}</td>
+        <td><button (click)="openEditKamarDialog('edit', kamar.idKamar, kamar.noKamar)" class="btn btn-primary">Edit</button></td>
+        <td><button (click)="openDeleteKamarDialog(kamar.idKamar, kamar.noKamar)" class="btn btn-danger" title="Hapus kamar">Hapus</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,60 @@
+<div class="main-menu-wrapper">
+  <div class="div-title">
+    <h5>Catat Check-In / Booking</h5>
+  </div>
+
+  <h5>Step 1 : Silahkan Pilih Kamar dulu</h5>
+
+  <ul *ngFor="let kamar of kamars | async">
+    <li>
+      <div (click)="openAddTransaksiLanjutDialog(kamar.idKamar, kamar.noKamar, kamar.tipeKamar.namaTipe, kamar.tipeKamar.harga)" class="btn btn-primary">{{kamar.noKamar}} | {{kamar.tipeKamar.namaTipe}} | {{kamar.tipeKamar.harga}} ( {{kamar.statusKamar.namaStatusKamar}} )</div>
+    </li>
+  </ul>
+  <!-- <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+    
+    <div class="col-sm-7">
+      <div class="form-group form-float">
+        <label class="form-label">Pilih Tamu</label>
+        <input name="noIdentitas" type="number" class="form-control" [(ngModel)]="customers.noIdentitas" #noIdentitas="ngModel" required>
+      </div>
+    </div>
+        
+    <div class="col-sm-7">
+      <div class="form-group form-float">
+        <label class="form-label">Nama Depan</label>
+        <input name="namaDepan" type="text" class="form-control" [(ngModel)]="customers.namaDepan" #namaDepan="ngModel" required>
+      </div>
+    </div>
+
+    <div class="col-sm-7">
+        <div class="form-group form-float">
+          <label class="form-label">Nama Belakang</label>
+          <input name="namaBelakang" type="text" class="form-control" [(ngModel)]="customers.namaBelakang" #namaBelakang="ngModel" required>
+        </div>
+      </div>
+        
+    <div class="col-sm-7">
+      <div class="form-group form-float">
+        <label class="form-label">Nomor telepon</label>
+        <input name="noTelp" type="number" class="form-control" [(ngModel)]="customers.noTelp" #noTelp="ngModel" required>
+      </div>
+    </div>
+        
+    <div class="col-sm-7">
+      <div class="form-group form-float">
+        <label class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" [(ngModel)]="customers.email" #email="ngModel" required>
+      </div>
+    </div>
+        
+    <div class="col-sm-7">
+      <div class="form-group form-float">
+        <label class="form-label">Alamat</label>
+        <input name="alamat" type="text" class="form-control" [(ngModel)]="customers.alamat" #alamat="ngModel" required>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!addTransaksiForm.form.valid" class="btn btn-info">Simpan</button> -->
+
+  <!-- </form> -->
+</div>
