@@ -1,10 +1,11 @@
-<h4 mat-dialog-title>{{data.action}} data tipe kamar {{ data.namaTipe}}</h4>
+<h4 class="mat-dialog-title" mat-dialog-title="" id="mat-dialog-title-1" style="text-transform: uppercase;">
+    data tipe kamar</h4>
 
-<form (ngSubmit)="onEditSubmit(data.idTipeKamar)" #editTipeKamarForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+<form (ngSubmit)="onEditSubmit(data.idTipeKamar)" #editTipeKamarForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin nng-pristine ng-invalid ng-touched" novalidate="" style="/*! margin-bottom: 10px; */padding-bottom: 50px;">
 <div mat-dialog-content *ngIf="tipekamar">            
         <div class="col-sm-7">
           <div class="form-group form-float">
-            <label class="form-label">Nama Tipe Kamar</label>
+            <label class="form-label" style="margin-top: 10px;">Nama Tipe Kamar</label>
             <input name="namatipekamar" type="text" class="form-control" [(ngModel)]="tipekamar.namaTipe" #namaTipe="ngModel" required>
           </div>
         </div>
@@ -17,8 +18,9 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="batal()">Batal</button>
-    <button type="submit" [disabled]="!editTipeKamarForm.form.valid" class="btn btn-info">Simpan</button>
+    
+    <button type="submit" [disabled]="!editTipeKamarForm.form.valid" class="btn btn-info" style="margin-left: 14px;">Simpan</button>
+    <button mat-button (click)="batal()" class="btn btn-danger mat-button" mat-button="" style="margin-left: 20px;">Batal</button>
     <!-- <button mat-button>Simpan</button> -->
 </div>
 </form>

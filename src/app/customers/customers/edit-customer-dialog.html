@@ -1,6 +1,6 @@
 <h3 mat-dialog-title>Edit data customer : {{ data.id_customer}}</h3>
 
-<form (ngSubmit)="onEditSubmit(data.id_customer)" #editCustomerForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+<form (ngSubmit)="onEditSubmit(data.id_customer)" #editCustomerForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin ng-pristine ng-valid ng-touched" novalidate="" style="padding-bottom: 25px;/*! margin-bottom: 25px; */">
 <div mat-dialog-content *ngIf="customer">
         <div class="col-sm-7">
           <div class="form-group form-float">
@@ -48,8 +48,8 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="batal()">Batal</button>
-    <button type="submit" [disabled]="!editCustomerForm.form.valid" class="btn btn-info">Simpan</button>
+    <button type="submit" [disabled]="!editCustomerForm.form.valid" class="btn btn-info" style="margin-left: 14px;">Simpan</button>
+    <button mat-button (click)="batal()" class="btn btn-danger mat-button" mat-button="" style="margin-left: 20px;">Batal</button>
     <!-- <button mat-button>Simpan</button> -->
 </div>
 </form>

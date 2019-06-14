@@ -1,18 +1,20 @@
-<h4 mat-dialog-title>{{data.action}} data kamar {{ data.noKamar}}</h4>
+<h4 class="mat-dialog-title" mat-dialog-title="" id="mat-dialog-title-1" style="text-transform: uppercase;">
+  tambah data kamar </h4>
 
-<form (ngSubmit)="onSubmit(data.idKamar)" #editKamarForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
-<div mat-dialog-content *ngIf="kamar">
+
+<form (ngSubmit)="onSubmit(data.idKamar)" #editKamarForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margi nng-pristine ng-invalid ng-touched" novalidate="" style="/*! margin-bottom: 10px; */padding-bottom: 50px;">
+  <div mat-dialog-content *ngIf="kamar">
         <div class="col-sm-7">
           <div class="form-group form-float">
-            <label class="form-label">Nomor Kamar</label>
+            <label class="form-label" style="margin-top: 10px;">Nomor Kamar : </label>
             <input name="nomorkamar" type="text" class="form-control" [(ngModel)]="kamar.noKamar" #noKamar="ngModel" required>
           </div>
         </div>
 
         <div class="col-sm-7">
             <div class="form-group form-float">
-              <label class="form-label">Tipe Kamar</label>
-              <select name="selecttipekamar" [(ngModel)]="kamar.idTipeKamar" #idTipeKamar="ngModel">
+              <label class="form-label">Tipe Kamar   : </label>
+               <select name="selecttipekamar" [(ngModel)]="kamar.idTipeKamar" #idTipeKamar="ngModel"  class="ng-untouched ng-pristine ng-valid" style="margin-left: 15px;padding-right: 20px;">
                   <option *ngFor="let tipekamar of tipekamars" value="{{tipekamar.idTipeKamar}}">{{tipekamar.namaTipe}}</option>
               </select>
               </div>
@@ -20,8 +22,9 @@
 
         <div class="col-sm-7">
             <div class="form-group form-float">
-              <label class="form-label">Status Kamar</label>
-              <select name="selectstatuskamar" [(ngModel)]="kamar.idStatusKamar" #idStatusKamar="ngModel">
+
+              <label class="form-label">Status Kamar :</label>
+               <select name="selectstatuskamar" [(ngModel)]="kamar.idStatusKamar" #idStatusKamar="ngModel" class="ng-untouched ng-pristine ng-valid" style="margin-left: 4px;">
                   <!-- <option value=""></option> -->
                   <option *ngFor="let statuskamar of statuskamars" value="{{statuskamar.idStatusKamar}}">{{statuskamar.namaStatusKamar}}</option>
               </select>
@@ -30,8 +33,10 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="batal()">Batal</button>
-    <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info">Simpan</button>
+     
+    <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info" style="margin-left: 14px;">Simpan</button>
+    <button mat-button (click)="batal()" class="btn btn-danger mat-button" mat-button="" style="margin-left: 20px;">Batal</button>
+    
     <!-- <button mat-button>Simpan</button> -->
 </div>
 </form>

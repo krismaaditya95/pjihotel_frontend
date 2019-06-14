@@ -1,15 +1,32 @@
-<div class="main-menu-wrapper">
+<div class="main-menu-wrapper" style="margin-left: 160px;">
   <div class="div-title">
-    <h5>Catat Check-In / Booking</h5>
+    <h5 _ngcontent-okp-c2="" style="text-align: center;font-weight: bold;font-size: 20pt;">Catat Check-In / Reservasi</h5>
   </div>
-
-  <h5>Step 1 : Silahkan Pilih Kamar dulu</h5>
+   <h5>Step 1 : Silahkan Pilih Kamar dulu</h5>
 
   <ul *ngFor="let kamar of kamars | async">
-    <li>
+      <div class="row">      
+          <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3" >
+              <div class="card-box noradius noborder bg-info" _ngcontent-lch-c2="" style="height: 200px;"
+              (click)="openAddTransaksiLanjutDialog(kamar.idKamar, kamar.noKamar, kamar.tipeKamar.namaTipe, kamar.tipeKamar.harga)">
+                  <i class="fa fa-user-o float-right text-white"></i>
+                  <h6 class="text-white text-uppercase m-b-20"> {{kamar.noKamar}} {{kamar.tipeKamar.namaTipe}}</h6>
+                  <h1 class="m-b-20 text-white counter">{{kamar.tipeKamar.namaTipe}}</h1>
+                  <span class="text-white">{{kamar.tipeKamar.harga}}</span>
+              </div>
+          </div>
+
+           
+      </div>
+    
+    
+     
+    <!-- <li>
       <div (click)="openAddTransaksiLanjutDialog(kamar.idKamar, kamar.noKamar, kamar.tipeKamar.namaTipe, kamar.tipeKamar.harga)" class="btn btn-primary">{{kamar.noKamar}} | {{kamar.tipeKamar.namaTipe}} | {{kamar.tipeKamar.harga}} ( {{kamar.statusKamar.namaStatusKamar}} )</div>
-    </li>
+    </li> -->
   </ul>
+
+
   <!-- <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
     
     <div class="col-sm-7">
