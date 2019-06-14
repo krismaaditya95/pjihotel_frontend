@@ -1,0 +1,13 @@
+<div class="formwrapper">
+  <h3 class="formtitle">Sistem Reservasi Hotel</h3>
+    <form class="loginform" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      
+      <label for="txtUsername">Username</label>
+      <input type="text" [(ngModel)]="user.userName" #userName="ngModel" placeholder="username">
+
+      <label for="txtPassword">Password</label>
+      <input type="password" [(ngModel)]="user.userPass" #userPasss="ngModel" placeholder="password">
+
+      <button id="loginbtn" type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+</div>

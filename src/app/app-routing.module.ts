@@ -8,11 +8,21 @@ import { TipeKamarComponent } from './kamar/tipe-kamar/tipe-kamar.component';
 import { KamarComponent } from './kamar/kamar/kamar.component';
 import { AddTransaksiComponent } from './add-transaksi/add-transaksi.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
     path: 'check-in-list',

@@ -70,8 +70,9 @@ export class AddTransaksiLanjutDialog{
   customers: Observable<Customers[]>;
   statuschecks: Observable<Statuscheck[]>;
 
-  constructor(public addTransaksiLanjutDialogRef: MatDialogRef<AddTransaksiLanjutDialog>, @Inject(MAT_DIALOG_DATA) public data: any, private transaksiService: TransaksiService, private customerService: CustomersService){
+  constructor(public addTransaksiLanjutDialogRef: MatDialogRef<AddTransaksiLanjutDialog>, @Inject(MAT_DIALOG_DATA) public data: any, private transaksiService: TransaksiService, private customerService: CustomersService, private router:Router){
     this.transaksi = new Transaksi();
+    this.transaksi.idKamar = this.data.idKamar;
   }
 
   ngOnInit(){
@@ -94,7 +95,12 @@ export class AddTransaksiLanjutDialog{
   onSubmit(){
     this.transaksiService.addTransaksi(this.transaksi).subscribe(result =>{
       this.addTransaksiLanjutDialogRef.close();
+      this.redirectToListCheckIn();
     });
+  }
+
+  redirectToListCheckIn(){
+    this.router.navigate(['/check-in-list']);
   }
 
   batal(){

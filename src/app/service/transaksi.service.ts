@@ -16,7 +16,13 @@ export class TransaksiService {
   private editTransaksiUrl = "http://localhost:7080/pjihotel/api/v1/editTransaksi";
   private deleteTransaksiUrl = "http://localhost:7080/pjihotel/api/v1/deleteTransaksi";
 
+  private jumlahNginepUrl = "http://localhost:7080/pjihotel/api/v1/getJumlahCheckIn";
+  private jumlahKamarTersediaUrl = "http://localhost:7080/pjihotel/api/v1/getJumlahKamarTersedia";
+  private jumlahCustomerUrl = "http://localhost:7080/pjihotel/api/v1/getJumlahCustomer";
+
   private getAllStatusCheckUrl = "http://localhost:7080/pjihotel/api/v1/getAllStatusCheck";
+
+  private loginUrl = "http://localhost:7080/pjihotel/api/v1/getUserByUserName";
   constructor(private http:HttpClient) { }
 
   // -- Transaksi --
@@ -40,6 +46,10 @@ export class TransaksiService {
     return this.http.put<Transaksi>(`${this.changeStatusCheckInUrl}/${idTransaksi}`, transaksi);
   }
 
+  // public changeStatusCheckIn(idTransaksi:number): Observable<any>{
+  //   return this.http.put<Transaksi>(`${this.changeStatusCheckInUrl}/${idTransaksi}`);
+  // }
+
   public editTransaksi(idTransaksi:number, transaksi:Transaksi){
     return this.http.put<Transaksi>(`${this.editTransaksiUrl}/${idTransaksi}`, transaksi);
   }
@@ -51,5 +61,21 @@ export class TransaksiService {
   // -- Status Check-In
   public getAllStatusCheck(): Observable<any>{
     return this.http.get(this.getAllStatusCheckUrl);
+  }
+
+  // -- Dashboard ------
+  public getJumlahNginep(idTransaksi:number): Observable<any>{
+    return this.http.get(`${this.jumlahNginepUrl}/${idTransaksi}`);
+  }
+  public getKamarAvailable(idStatusKamar:number): Observable<any>{
+    return this.http.get(`${this.jumlahKamarTersediaUrl}/${idStatusKamar}`);
+  }
+  public getJumlahCustomer(): Observable<any>{
+    return this.http.get(this.jumlahCustomerUrl);
+  }
+
+  // login
+  public login(userName:string): Observable<any>{
+    return this.http.get(`${this.loginUrl}/${userName}`);
   }
 }

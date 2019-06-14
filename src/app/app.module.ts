@@ -22,6 +22,7 @@ import { KamarComponent, EditKamarDialog, DeleteKamarDialog } from './kamar/kama
 import { TipeKamarComponent, EditTipeKamarDialog, DeleteTipeKamarDialog } from './kamar/tipe-kamar/tipe-kamar.component';
 import { AddTransaksiComponent, AddTransaksiLanjutDialog } from './add-transaksi/add-transaksi.component';
 import { BookingsComponent } from './bookings/bookings.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     AddTransaksiLanjutDialog,
     EditTransaksiDialog,
     DeleteTransaksiDialog,
-    BookingsComponent
+    BookingsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

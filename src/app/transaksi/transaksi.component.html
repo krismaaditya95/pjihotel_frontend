@@ -23,8 +23,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transaksi of transaksis | async">
-        <td>{{ transaksi.idTransaksi }}</td>
+      <tr *ngFor="let transaksi of transaksis | async ; let i = index;">
+        <td>{{ i+1 }}</td>
         <td>#{{ transaksi.kodeTransaksi }}</td>
         <td>{{ transaksi.customer.namaDepan }} {{ transaksi.customer.namaBelakang }}</td>
         <td>{{ transaksi.kamar.noKamar }}</td>
@@ -34,7 +34,7 @@
         <td>{{ transaksi.checkOutTime }}</td>
         <td>{{ transaksi.totalHarga | currency: 0 : "Rp. " }}</td>
         <td>{{ transaksi.statusCheck.namaStatus }}</td>
-        <td><button (click)="openCheckOutDialog('co', transaksi.idTransaksi, transaksi.kodeTransaksi)" class="btn btn-primary">Check Out</button></td>
+        <td><button (click)="openCheckOutDialog('Check Out', transaksi.idTransaksi, transaksi.kodeTransaksi)" class="btn btn-primary">Check Out</button></td>
         <td><button (click)="openDeleteTransaksiDialog(transaksi.idTransaksi, transaksi.kodeTransaksi)" class="btn btn-danger" title="Hapus/Batalkan transaksi">Hapus Catatan</button></td>
         
       </tr>

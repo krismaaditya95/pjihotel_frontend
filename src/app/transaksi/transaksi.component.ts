@@ -3,6 +3,9 @@ import { Observable } from 'rxjs';
 import { Transaksi } from '../model/transaksi';
 import { TransaksiService } from '../service/transaksi.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-transaksi',
@@ -10,25 +13,32 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./transaksi.component.css']
 })
 export class TransaksiComponent implements OnInit {
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   transaksis: Observable<Transaksi[]>;
+
+  // dataSource = new MatTableDataSource<>(this.transaksis);
+
   editTransaksiDialogRef: MatDialogRef<EditTransaksiDialog>;
 
   constructor(public transaksiService : TransaksiService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.reloadDataTransaksi();
-    
   }
 
   reloadDataTransaksi(){
-    this.transaksis = this.transaksiService.getAllTransaksi();
+    this.transaksis = this.transaksiService.getTransaksiByIdStatusCheck(1);
   }
 
-  openEditTransaksiDialog(action, idTransaksi:number=null, kodeTransaksi:string=null){
+  openCheckOutDialog(action, idTransaksi:number=null, kodeTransaksi:string=null){
     this.editTransaksiDialogRef = this.dialog.open(EditTransaksiDialog,{
       width: '600px',
       data: {action : action , idTransaksi:idTransaksi, kodeTransaksi: kodeTransaksi}
+    });
+
+    this.editTransaksiDialogRef.afterClosed().subscribe(result =>{
+      this.reloadDataTransaksi();
     });
   }
 }
@@ -42,6 +52,8 @@ export class EditTransaksiDialog{
 
   constructor(public editTransaksiDialogRef: MatDialogRef<EditTransaksiDialog>, @Inject(MAT_DIALOG_DATA) public data: any, private transaksiService: TransaksiService){
     this.transaksi = new Transaksi();
+    this.transaksi.idStatusCheck = 2;
+
   }
 
   ngOnInit(){
@@ -56,8 +68,15 @@ export class EditTransaksiDialog{
 
   }
 
-  batal(){
+  checkOut(idTransaksi:number){
+    this.transaksiService.changeStatusCheckIn(idTransaksi, this.transaksi).subscribe(
+      result => {
+        this.editTransaksiDialogRef.close();
+      });
+  }
 
+  batal(){
+    this.editTransaksiDialogRef.close();
   }
 
 }

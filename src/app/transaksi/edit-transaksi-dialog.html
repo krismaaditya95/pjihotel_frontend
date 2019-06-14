@@ -1,6 +1,6 @@
-<h4 mat-dialog-title>{{data.action}} data Check-In/Booking {{ data.kodeTransaksi}}</h4>
+<h4 mat-dialog-title>{{data.action}} data Check-In ID:{{data.idTransaksi}} {{ data.kodeTransaksi}}</h4>
 
-<form (ngSubmit)="onSubmit(data.idTransaksi)" #editTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+<!-- <form (ngSubmit)="onSubmit(data.idTransaksi)" #editTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
 <div mat-dialog-content *ngIf="transaksi">
         <div class="col-sm-7">
           <div class="form-group form-float">
@@ -22,16 +22,15 @@
             <div class="form-group form-float">
               <label class="form-label">Status Kamar</label>
               <select name="selectstatuskamar" [(ngModel)]="kamar.idStatusKamar" #idStatusKamar="ngModel">
-                  <!-- <option value=""></option> -->
                   <option *ngFor="let statuskamar of statuskamars" value="{{statuskamar.idStatusKamar}}">{{statuskamar.namaStatusKamar}}</option>
               </select>
               </div>
         </div>
-</div>
+</div> -->
 
 <div mat-dialog-actions>
     <button mat-button (click)="batal()">Batal</button>
-    <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info">Simpan</button>
+    <button mat-button (click)="checkOut(data.idTransaksi)">Check Out</button>
+    <!-- <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info">Simpan</button> -->
     <!-- <button mat-button>Simpan</button> -->
 </div>
-</form>

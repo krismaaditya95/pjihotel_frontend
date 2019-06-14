@@ -3,8 +3,16 @@
       <h5>Dashboard</h5>
   </div>
 
-  <ul>
-    
-  </ul>
+  <div>
+    <h4>{{ checkins | async }}</h4> <h5>Tamu menginap</h5>
+  </div>
+
+  <div>
+    <h4>{{ kamaravailable | async }}</h4> <h5> Kamar Tersedia</h5>
+  </div>
+
+  <div>
+    <h4>{{ customers | async }}</h4> <h5> Jumlah Semua tamu yang pernah nginep di sini</h5>
+  </div>
   
 </div>

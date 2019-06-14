@@ -3,7 +3,7 @@
       <h5>Catat Check-In / Booking | Step 2</h5>
     </div>
   
-    <h5>Kamar yang anda pilih : ID {{data.idKamar}} , {{data.noKamar}}, {{data.namaTipe}} ({{data.harga | currency : 0 : "Rp. "}})</h5>
+    <h5>Kamar yang anda pilih : {{data.noKamar}}, {{data.namaTipe}} ({{data.harga | currency : 0 : "Rp. "}})</h5>
 
     <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
         <div class="col-sm-7">
@@ -15,11 +15,11 @@
         </div>
         </div>
 
-        <input name="idKamar" type="number" [(ngModel)]="transaksi.idKamar" #idKamar="ngModel">
+        <!-- <input name="idKamar" type="number" [(ngModel)]="transaksi.idKamar" #idKamar="ngModel"> -->
 
       <div class="col-sm-7">
         <div class="form-group form-float">
-          <label class="form-label">Tanggal Check In {{data.todayDate}}</label>
+          <label class="form-label">Tanggal Check In</label>
           <input name="checkInDate" type="date" min="{{ data.todayDate | date:'yyyy-MM-dd' }}" class="form-control" [(ngModel)]="transaksi.checkInDate" #checkInDate="ngModel" required>
         </div>
       </div>
