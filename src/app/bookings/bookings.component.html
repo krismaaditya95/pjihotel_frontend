@@ -22,8 +22,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let booking of bookings | async">
-        <td>{{ booking.idTransaksi }}</td>
+      <tr *ngFor="let booking of bookings | async; let i = index;">
+        <td>{{ i+1 }}</td>
+        <!-- <td>{{ booking.idTransaksi }}</td> -->
         <td>#{{ booking.kodeTransaksi }}</td>
         <td>{{ booking.customer.namaDepan }} {{ booking.customer.namaBelakang }}</td>
         <td>{{ booking.kamar.noKamar }}</td>

@@ -29,7 +29,8 @@
 </div> -->
 
 <div mat-dialog-actions>
-    <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info">Simpan</button>  
+    <!-- <button type="submit" [disabled]="!editKamarForm.form.valid" class="btn btn-info">Simpan</button>   -->
+    <button mat-button (click)="checkOut(data.idTransaksi)" class="btn btn-info">Check Out</button>
   <button mat-button (click)="batal()" class="btn btn-danger">Batal</button>
     
     <!-- <button mat-button>Simpan</button> -->

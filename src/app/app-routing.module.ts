@@ -9,6 +9,7 @@ import { KamarComponent } from './kamar/kamar/kamar.component';
 import { AddTransaksiComponent } from './add-transaksi/add-transaksi.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { LoginComponent } from './login/login.component';
+import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'tipe-kamar',
     component: TipeKamarComponent
+  },
+  {
+    path: 'laporan',
+    component: ReportComponent
   }
 ];
 

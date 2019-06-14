@@ -23,6 +23,7 @@ import { TipeKamarComponent, EditTipeKamarDialog, DeleteTipeKamarDialog } from '
 import { AddTransaksiComponent, AddTransaksiLanjutDialog } from './add-transaksi/add-transaksi.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { LoginComponent } from './login/login.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { LoginComponent } from './login/login.component';
     EditTransaksiDialog,
     DeleteTransaksiDialog,
     BookingsComponent,
-    LoginComponent
+    LoginComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

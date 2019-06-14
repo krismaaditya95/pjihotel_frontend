@@ -17,8 +17,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let kamar of kamars | async">
-        <td>{{ kamar.idKamar }}</td>
+      <tr *ngFor="let kamar of kamars | async ; let i = index;">
+        <td>{{ i+1 }}</td>
         <td>{{ kamar.noKamar }}</td>
         <td>{{ kamar.tipeKamar.namaTipe }}</td>
         <td>{{ kamar.tipeKamar.harga }}</td>

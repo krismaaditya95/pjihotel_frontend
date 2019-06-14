@@ -17,10 +17,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tipekamar of tipekamars | async">
-        <td>{{ tipekamar.idTipeKamar }}</td>
+      <tr *ngFor="let tipekamar of tipekamars | async ; let i = index;">
+        <td>{{ i+1 }}</td>
         <td>{{ tipekamar.namaTipe }}</td>
-        <td>{{ tipekamar.harga }}</td>
+        <td>{{ tipekamar.harga | currency: 0 : 'Rp. '}}</td>
         <td><button (click)="openEditTipeKamarDialog('edit', tipekamar.idTipeKamar, tipekamar.namaTipe)" class="btn btn-primary">Edit</button></td>
         <td><button (click)="openDeleteTipeKamarDialog(tipekamar.idTipeKamar, tipekamar.namaTipe)" class="btn btn-danger" title="Hapus kamar">Hapus</button></td>
         

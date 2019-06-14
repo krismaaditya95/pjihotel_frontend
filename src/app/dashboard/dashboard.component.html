@@ -2,17 +2,39 @@
   <div class="div-title">
       <h5>Dashboard</h5>
   </div>
-
-  <div>
-    <h4>{{ checkins | async }}</h4> <h5>Tamu menginap</h5>
+  <div class="row">      
+      <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3" >
+          <div class="card-box noradius noborder bg-info" _ngcontent-lch-c2="" style="height: 150px;"
+          >
+              <i class="fa fa-user-o float-right text-white" style="font-size: 50px;"></i>
+              
+              <h5 class="m-b-20 text-white counter">Tamu Menginap</h5>
+              <h1 class="text-white text-uppercase m-b-20"> {{ checkins | async }}</h1>
+               </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3" >
+          <div class="card-box noradius noborder bg-info" _ngcontent-lch-c2="" style="height: 150px;"
+          >
+              <i class="fa fa-user-o float-right text-white" style="font-size: 50px;"></i>
+              
+              <h5 class="m-b-20 text-white counter">Jumlah Semua tamu  </h5>
+              <h1 class="text-white text-uppercase m-b-20"> {{ customers | async }}</h1>
+               </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3" >
+          <div class="card-box noradius noborder bg-info" _ngcontent-lch-c2="" style="height: 150px;"
+          >
+              <i class="fa fa-bed float-right text-white" style="font-size: 50px;"></i>
+              
+              <h5 class="m-b-20 text-white counter">Kamar Tersedia  </h5>
+              <h1 class="text-white text-uppercase m-b-20"> {{ kamaravailable | async }}</h1>
+               </div>
+      </div>
+      
   </div>
+   
 
-  <div>
-    <h4>{{ kamaravailable | async }}</h4> <h5> Kamar Tersedia</h5>
-  </div>
-
-  <div>
-    <h4>{{ customers | async }}</h4> <h5> Jumlah Semua tamu yang pernah nginep di sini</h5>
-  </div>
+   
+ 
   
 </div>

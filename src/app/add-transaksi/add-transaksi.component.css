@@ -14,3 +14,12 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ca6d', endColorstr='#00a65a', GradientType=0) !important;
     color: #fff;
   }
+
+.row{
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.row:hover{
+  border: 1px solid #252525;
+}

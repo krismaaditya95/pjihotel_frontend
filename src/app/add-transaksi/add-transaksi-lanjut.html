@@ -3,7 +3,9 @@
       <h5>Catat Check-In / Reservasi | Step 2</h5>
     </div>
   
-    <h5>Kamar yang anda pilih : {{data.noKamar}}, {{data.namaTipe}} ({{data.harga | currency : 0 : "Rp. "}})</h5>
+    <h5>Kamar yang anda pilih : No.{{data.noKamar}}</h5>
+    <h5>Tipe Kamar : {{data.namaTipe}}</h5>
+    <h5>Harga Kamar : ({{data.harga | currency : 0 : "Rp. "}})</h5>
 
    
     <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin ng-pristine ng-invalid ng-touched" novalidate="" style="margin-bottom: 25px;padding-bottom: 15px;">

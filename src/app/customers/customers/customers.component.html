@@ -20,8 +20,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let customer of customers | async">
-            <td>{{ customer.idCustomer }}</td>
+          <tr *ngFor="let customer of customers | async; let i = index;">
+            <td>{{ i+1 }}</td>
             <td>{{ customer.noIdentitas }}</td>
             <td>{{ customer.namaDepan }}</td>
             <td>{{ customer.namaBelakang }}</td>

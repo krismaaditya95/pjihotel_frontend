@@ -34,6 +34,9 @@ body{
     padding: 20px;
 }
 
+.mat-dialog-container{
+  width: 600px;
+}
 
 
 html {

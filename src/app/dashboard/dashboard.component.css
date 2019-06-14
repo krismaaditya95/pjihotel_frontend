@@ -1,0 +1,13 @@
+.dashboard-div{
+    border: 1px solid #ccc;
+    width: 300px;
+    display: inline;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+h2{
+    font-weight: bold;
+}

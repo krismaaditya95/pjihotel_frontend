@@ -10,9 +10,9 @@
               <div class="card-box noradius noborder bg-info" _ngcontent-lch-c2="" style="height: 200px;"
               (click)="openAddTransaksiLanjutDialog(kamar.idKamar, kamar.noKamar, kamar.tipeKamar.namaTipe, kamar.tipeKamar.harga)">
                   <i class="fa fa-user-o float-right text-white"></i>
-                  <h6 class="text-white text-uppercase m-b-20"> {{kamar.noKamar}} {{kamar.tipeKamar.namaTipe}}</h6>
+                  <h6 class="text-white text-uppercase m-b-20"> No.{{kamar.noKamar}} ({{kamar.tipeKamar.namaTipe}})</h6>
                   <h1 class="m-b-20 text-white counter">{{kamar.tipeKamar.namaTipe}}</h1>
-                  <span class="text-white">{{kamar.tipeKamar.harga}}</span>
+                  <span class="text-white">{{kamar.tipeKamar.harga | currency : 0 : 'Rp. '}}</span>
               </div>
           </div>
 
