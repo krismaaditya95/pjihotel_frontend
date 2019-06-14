@@ -1,0 +1,52 @@
+.sidebar .logo-img img {
+    width: 35px;
+    top: 16px;
+    position: absolute;
+}  
+ 
+.flex-column{
+    position: relative;
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-bottom: 30px;
+     
+    margin-top: 20px;
+    background: #262D33;
+}
+.nav-link{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+ 
+  color: #C2CAD0;
+  display: block;
+  border-bottom: 1px solid #e7e7e7;
+}
+.Logo{
+ width: 50px;
+ height: 50px;
+ margin-left: 10px ;
+ margin-top: 10px;
+}
+
+.title{
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 5px;
+    
+}
+.navbar-dark{
+    background-color: #E7717D;
+}
+.main-sidebar {
+    top: 50px;
+    width: 220px;
+    z-index: 10;
+    background: #262D33;
+    bottom: 70px;
+    margin-bottom: -70px;
+    margin-top: 20px;
+    padding-bottom: 70px;
+    position: absolute; }
+  

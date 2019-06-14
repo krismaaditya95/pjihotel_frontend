@@ -1,13 +1,13 @@
-<div class="main-menu-wrapper">
+<div class="main-menu-wrapper" style="margin-left: 160px;">
     <div class="div-title">
-      <h5>Catat Buku Tamu</h5>
+        <h5 _ngcontent-okp-c2="" style="text-align: center;font-weight: bold;font-size: 20pt;">Catat Buku Tamu</h5>
     </div>
 
-    <form (ngSubmit)="onSubmit()" #addCustomerForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
-      
+    <form (ngSubmit)="onSubmit()" #addCustomerForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin ng-untouched ng-pristine ng-invalid" novalidate="" style="padding-bottom: 20px;">
+     
       <div class="col-sm-7">
         <div class="form-group form-float">
-          <label class="form-label">Nomor Identitas (KTP/SIM)</label>
+          <label _ngcontent-wfr-c2="" class="form-label" style="margin-top: 15px;" > Nomor Identitas (KTP/SIM)</label>
           <input name="noIdentitas" type="number" class="form-control" [(ngModel)]="customers.noIdentitas" #noIdentitas="ngModel" required>
         </div>
       </div>
@@ -47,7 +47,9 @@
         </div>
       </div>
 
-      <button type="submit" [disabled]="!addCustomerForm.form.valid" class="btn btn-info">Simpan</button>
-
+      <button type="submit" [disabled]="!addCustomerForm.form.valid" class="btn btn-info"  _ngcontent-yce-c2=""  style="margin-left: 10px;">  
+        Simpan </button>
+      <button mat-button (click)="batal()" class="btn btn-danger mat-button" mat-button="" style="left: 20px;"> 
+              Batal</button>
     </form>
 </div>

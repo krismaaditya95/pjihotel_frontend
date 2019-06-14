@@ -1,11 +1,12 @@
-<div class="main-menu-wrapper">
+<div class="main-menu-wrapper" style="margin-left: 50px;">
     <div class="div-title">
-      <h5>Catat Check-In / Booking | Step 2</h5>
+      <h5>Catat Check-In / Reservasi | Step 2</h5>
     </div>
   
     <h5>Kamar yang anda pilih : ID {{data.idKamar}} , {{data.noKamar}}, {{data.namaTipe}} ({{data.harga | currency : 0 : "Rp. "}})</h5>
 
-    <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin">
+   
+    <form (ngSubmit)="onSubmit()" #addTransaksiForm="ngForm" class="w3-container w3-card-4 w3-light-grey w3-text-grey w3-margin ng-pristine ng-invalid ng-touched" novalidate="" style="margin-bottom: 25px;padding-bottom: 15px;">
         <div class="col-sm-7">
         <div class="form-group form-float">
             <label class="form-label">Pilih Tamu</label>
@@ -15,8 +16,7 @@
         </div>
         </div>
 
-        <input name="idKamar" type="number" [(ngModel)]="transaksi.idKamar" #idKamar="ngModel">
-
+         
       <div class="col-sm-7">
         <div class="form-group form-float">
           <label class="form-label">Tanggal Check In {{data.todayDate}}</label>
@@ -54,8 +54,9 @@
         </div>
     </div>
     
-    <button type="submit" [disabled]="!addTransaksiForm.form.valid" class="btn btn-info">Simpan</button>
-  
+    <button type="submit" [disabled]="!addTransaksiForm.form.valid" class="btn btn-info" style="margin-left: 14px;">Simpan</button>
+    <button mat-button (click)="batal()" class="btn btn-danger mat-button" mat-button="" style="margin-left: 20px;">Batal</button>
+   
     </form>
   </div>
   
